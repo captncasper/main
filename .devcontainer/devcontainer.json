@@ -1,0 +1,31 @@
+{
+    "name": "PrivaGuard Development",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12", 
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "portsAttributes": {
+        "3000": {
+            "label": "Frontend (PrivaGuard)",
+            "onAutoForward": "notify"
+        },
+        "8001": {
+            "label": "Backend (FastAPI)",
+            "onAutoForward": "notify"
+        }
+    },
+    "forwardPorts": [3000, 8001],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    }
+}
